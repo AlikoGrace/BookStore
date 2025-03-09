@@ -3,8 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
 import Cart from "./features/cart/Cart";
-import Order from "./features/order/Order";
-import Books from "./features/books/Books";
+import Order, { loader as orderLoader } from "./features/order/Order";
+import Books, { loader as bookLoader } from "./features/books/Books";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/books",
         element: <Books />,
+        loader: bookLoader,
       },
       {
         path: "/cart",
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/order/:orderId",
         element: <Order />,
+        loader: orderLoader,
       },
     ],
   },

@@ -1,6 +1,6 @@
 import { supabase } from "./supabase";
 
-export async function getOrders() {
+export async function getOrder() {
   const { data, error } = await supabase.from("orders").select("*");
 
   if (error) {
